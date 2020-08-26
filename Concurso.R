@@ -1,5 +1,5 @@
-## CONCURSO VISUALIZACI覰 DE DATOS
-## Ricardo Mena, Felipe Zum醨raga
+## CONCURSO VISUALIZACI脫N DE DATOS
+## Ricardo Mena, Felipe Zum谩rraga
 
 ## Load packages
 packages <- c("data.table", "ggplot2")
@@ -19,12 +19,18 @@ head(astroDT)
 astroDT$V1[astroDT$V1>6]=7
 
 ## Naming the particles
-astroDT$V1[astroDT$V1==1]="Fot髇"
-astroDT$V1[astroDT$V1==2]="Positr髇"
-astroDT$V1[astroDT$V1==3]="Electr髇"
-astroDT$V1[astroDT$V1==5]="Mu髇+"
-astroDT$V1[astroDT$V1==6]="Mu髇-"
+astroDT$V1[astroDT$V1==1]="Fot贸n"
+astroDT$V1[astroDT$V1==2]="Positr贸n"
+astroDT$V1[astroDT$V1==3]="Electr贸n"
+astroDT$V1[astroDT$V1==5]="Mu贸n+"
+astroDT$V1[astroDT$V1==6]="Mu贸n-"
 astroDT$V1[astroDT$V1==7]="Otra"
 
 ## Plot Energy per particle vs. Time
-ggplot(astroDT, aes(x = V7, y = V8, color = V1)) + geom_line()+ ggtitle("Energ韆 por part韈ula vs Tiempo")+xlab("Tiempo [ns]")+ ylab("Energ韆 total [GeV]") + labs(color = "Tipo")+ theme(plot.title = element_text(hjust = 0.5))+ theme(plot.title = element_text(face="bold.italic"))
+ggplot(astroDT, aes(x = V7, y = V8, color = V1)) + 
+  geom_line()+ ggtitle("Energ铆a por part铆cula vs Tiempo") +
+  xlab("Tiempo [ns]") + 
+  ylab("Energ铆a total [GeV]") + 
+  labs(color = "Tipo") + 
+  theme(plot.title = element_text(hjust = 0.5)) + 
+  theme(plot.title = element_text(face="bold.italic"))
